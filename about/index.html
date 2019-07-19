@@ -68,7 +68,6 @@
 
 
 
-  <meta name="keywords" content="线程池,">
 
 
 
@@ -78,19 +77,17 @@
 
 
 
-
-<meta name="description" content="ThreadPoolExecutorgraph LR;     RUNNING--&quot;shutdown()&quot;--&amp;gt;SHUTDOWN;     RUNNING--&quot;shutdownNow()&quot;--&amp;gt;STOP;     SHUTDOWN--&quot;阻塞队列为空，线程池中的工作数量为0&quot;--&amp;gt;TIDYING;     STOP--线程池中的工作线程数量为0--&amp;gt;TIDYING;     TIDYING--&quot;te">
-<meta name="keywords" content="线程池">
-<meta property="og:type" content="article">
-<meta property="og:title" content="线程池-1">
-<meta property="og:url" content="https://nojejesus.github.io/techTube/2019/07/19/线程池-1/index.html">
+<meta name="description" content="编程能不能像刘德华一样，一直干到70岁。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://nojejesus.github.io/techTube/about/index.html">
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
-<meta property="og:description" content="ThreadPoolExecutorgraph LR;     RUNNING--&quot;shutdown()&quot;--&amp;gt;SHUTDOWN;     RUNNING--&quot;shutdownNow()&quot;--&amp;gt;STOP;     SHUTDOWN--&quot;阻塞队列为空，线程池中的工作数量为0&quot;--&amp;gt;TIDYING;     STOP--线程池中的工作线程数量为0--&amp;gt;TIDYING;     TIDYING--&quot;te">
+<meta property="og:description" content="编程能不能像刘德华一样，一直干到70岁。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-19T10:42:24.060Z">
+<meta property="og:updated_time" content="2019-07-19T10:49:44.167Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线程池-1">
-<meta name="twitter:description" content="ThreadPoolExecutorgraph LR;     RUNNING--&quot;shutdown()&quot;--&amp;gt;SHUTDOWN;     RUNNING--&quot;shutdownNow()&quot;--&amp;gt;STOP;     SHUTDOWN--&quot;阻塞队列为空，线程池中的工作数量为0&quot;--&amp;gt;TIDYING;     STOP--线程池中的工作线程数量为0--&amp;gt;TIDYING;     TIDYING--&quot;te">
+<meta name="twitter:title" content="关于">
+<meta name="twitter:description" content="编程能不能像刘德华一样，一直干到70岁。">
 
 
 
@@ -120,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="https://nojejesus.github.io/techTube/2019/07/19/线程池-1/">
+  <link rel="canonical" href="https://nojejesus.github.io/techTube/about/">
 
 
 
 
 
-  <title>线程池-1 | Talk is cheap, show you my code.</title>
+  <title>关于 | Talk is cheap, show you my code.</title>
   
 
 
@@ -271,181 +268,33 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nojejesus.github.io/techTube/techTube/2019/07/19/线程池-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Junjie Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/techTube/uploads/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Talk is cheap, show you my code.">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">线程池-1</h1>
-        
+	<h1 class="post-title" itemprop="name headline">关于</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T15:31:49+08:00">
-                2019-07-19
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/techTube/categories/Java中级/" itemprop="url" rel="index">
-                    <span itemprop="name">Java中级</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <h3 id="ThreadPoolExecutor"><a href="#ThreadPoolExecutor" class="headerlink" title="ThreadPoolExecutor"></a>ThreadPoolExecutor</h3><pre class="mermaid">graph LR;
-    RUNNING--"shutdown()"-->SHUTDOWN;
-    RUNNING--"shutdownNow()"-->STOP;
-    SHUTDOWN--"阻塞队列为空，线程池中的工作数量为0"-->TIDYING;
-    STOP--线程池中的工作线程数量为0-->TIDYING;
-    TIDYING--"terminated()"-->TERMINATED;</pre>
-
-<ul>
-<li>监控线程池</li>
-</ul>
-<ul>
-<li>getTaskCount(): 线程池已执行和未执行的任务总数</li>
-<li>getCompletedTaskCount(): 已完成的任务数量</li>
-<li>getPoolSize(): 线程池当前的线程数量</li>
-<li>getActiveCount(): 当前线程池中正在执行任务的线程总数</li>
-</ul>
-
+      <div class="post-body">
+        
+        
+          <h3 id="编程能不能像刘德华一样，一直干到70岁。"><a href="#编程能不能像刘德华一样，一直干到70岁。" class="headerlink" title="编程能不能像刘德华一样，一直干到70岁。"></a>编程能不能像刘德华一样，一直干到70岁。</h3>
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/techTube/tags/线程池/" rel="tag"># 线程池</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/techTube/2019/07/19/Boot/" rel="next" title="Boot">
-                <i class="fa fa-chevron-left"></i> Boot
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -576,7 +425,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPoolExecutor"><span class="nav-number">1.</span> <span class="nav-text">ThreadPoolExecutor</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程能不能像刘德华一样，一直干到70岁。"><span class="nav-number">1.</span> <span class="nav-text">编程能不能像刘德华一样，一直干到70岁。</span></a></li></ol></div>
             
 
           </div>
