@@ -25,8 +25,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[线程池-1]]></title>
-    <url>%2FtechTube%2F2019%2F07%2F19%2F%E7%BA%BF%E7%A8%8B%E6%B1%A0-1%2F</url>
+    <title><![CDATA[线程池]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F19%2F%E7%BA%BF%E7%A8%8B%E6%B1%A0%2F</url>
     <content type="text"><![CDATA[ThreadPoolExecutorgraph LR; RUNNING--"shutdown()"-->SHUTDOWN; RUNNING--"shutdownNow()"-->STOP; SHUTDOWN--"阻塞队列为空，线程池中的工作数量为0"-->TIDYING; STOP--线程池中的工作线程数量为0-->TIDYING; TIDYING--"terminated()"-->TERMINATED; 监控线程池 getTaskCount(): 线程池已执行和未执行的任务总数 getCompletedTaskCount(): 已完成的任务数量 getPoolSize(): 线程池当前的线程数量 getActiveCount(): 当前线程池中正在执行任务的线程总数]]></content>
       <categories>
         <category>Java中级</category>
@@ -48,7 +48,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
+    <title><![CDATA[朝花夕拾]]></title>
     <url>%2FtechTube%2F2019%2F07%2F19%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
