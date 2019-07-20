@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CountDownLatch]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F20%2FCountDownLatch%2F</url>
+    <content type="text"><![CDATA[待添加]]></content>
+      <categories>
+        <category>Java中级</category>
+      </categories>
+      <tags>
+        <tag>CountDownLatch</tag>
+        <tag>并发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Spring Cloud]]></title>
     <url>%2FtechTube%2F2019%2F07%2F19%2FSpring-Cloud%2F</url>
     <content type="text"><![CDATA[待添加 待添加]]></content>
@@ -8,8 +20,8 @@
         <category>Spring框架</category>
       </categories>
       <tags>
-        <tag>Spring Cloud</tag>
         <tag>框架</tag>
+        <tag>Spring Cloud</tag>
       </tags>
   </entry>
   <entry>
@@ -20,14 +32,14 @@
         <category>Spring框架</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>Spring Boot</tag>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[线程池]]></title>
     <url>%2FtechTube%2F2019%2F07%2F19%2F%E7%BA%BF%E7%A8%8B%E6%B1%A0%2F</url>
-    <content type="text"><![CDATA[ThreadPoolExecutorgraph LR; RUNNING--"shutdown()"-->SHUTDOWN; RUNNING--"shutdownNow()"-->STOP; SHUTDOWN--"阻塞队列为空，线程池中的工作数量为0"-->TIDYING; STOP--线程池中的工作线程数量为0-->TIDYING; TIDYING--"terminated()"-->TERMINATED; 监控线程池 getTaskCount(): 线程池已执行和未执行的任务总数 getCompletedTaskCount(): 已完成的任务数量 getPoolSize(): 线程池当前的线程数量 getActiveCount(): 当前线程池中正在执行任务的线程总数]]></content>
+    <content type="text"><![CDATA[ThreadPoolExecutorgraph LR; RUNNING--"shutdown()"-->SHUTDOWN; RUNNING--"shutdownNow()"-->STOP; SHUTDOWN--"阻塞队列为空，线程池中的工作数量为0"-->TIDYING; STOP--线程池中的工作线程数量为0-->TIDYING; TIDYING--"terminated()"-->TERMINATED; 监控线程池 getTaskCount(): 线程池已执行和未执行的任务总数 getCompletedTaskCount(): 已完成的任务数量 getPoolSize(): 线程池当前的线程数量 getActiveCount(): 当前线程池中正在执行任务的线程总数 线程池的合理配置 cpu密集型任务，就需要尽量压榨CPU，参考值可以设置为NCPU+1IO密集型任务，参考值可以设置为2*NCPU 这只是参考值，并不代表随时随地拿线程池来用，要根据实际场景来分析选择以及参数的配置。例如，在开发企业级权限系统中，部门数的生成过程尝试使用线程池，结果是反而变慢，因为线程池里面的任务都很小（小到任务生成的时间和调度管理时间都很接近），这就造成资源浪费了。 关于用到newCachedThreadPool线程池可能会遇到的问题newCachedThreadPool的源码 12345public static ExecutorService newCachedThreadPool() &#123; return new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue&lt;Runnable&gt;());&#125; 可以看到它允许的线程数为Integer.MAX_VALUE，这代表可以无限大，因为线程数可以这么多，所以会可能导致OOM问题，要解决这个问题，根本上要自己定义个方法，给线程数设置一个合理的上限，例如： 1return new ThreadPoolExecutor(0,1024，60L, TimeUnit.SECONDS, new SynchronousQueue&lt;Runnable&gt;());]]></content>
       <categories>
         <category>Java中级</category>
       </categories>

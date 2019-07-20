@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="ThreadPoolExecutorgraph LR;     RUNNING--&quot;shutdown()&quot;--&amp;gt;SHUTDOWN;     RUNNING--&quot;shutdownNow()&quot;--&amp;gt;STOP;     SHUTDOWN--&quot;阻塞队列为空，线程池中的工作数量为0&quot;--&amp;gt;TIDYING;     STOP--线程池中的工作线程数量为0--&amp;gt;TIDYING;     TIDYING--&quot;te">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T02:02:06.540Z">
+<meta property="og:updated_time" content="2019-07-20T04:02:07.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程池">
 <meta name="twitter:description" content="ThreadPoolExecutorgraph LR;     RUNNING--&quot;shutdown()&quot;--&amp;gt;SHUTDOWN;     RUNNING--&quot;shutdownNow()&quot;--&amp;gt;STOP;     SHUTDOWN--&quot;阻塞队列为空，线程池中的工作数量为0&quot;--&amp;gt;TIDYING;     STOP--线程池中的工作线程数量为0--&amp;gt;TIDYING;     TIDYING--&quot;te">
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  104
+                  394
                 </span>
               
 
@@ -425,6 +425,24 @@
 <li>getActiveCount(): 当前线程池中正在执行任务的线程总数</li>
 </ul>
 <a id="more"></a>
+
+<h5 id="线程池的合理配置"><a href="#线程池的合理配置" class="headerlink" title="线程池的合理配置"></a>线程池的合理配置</h5><blockquote>
+<blockquote>
+<p>cpu密集型任务，就需要尽量压榨CPU，参考值可以设置为NCPU+1<br>IO密集型任务，参考值可以设置为2*NCPU</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>这只是参考值，并不代表随时随地拿线程池来用，要根据实际场景来分析选择以及参数的配置。例如，在开发企业级权限系统中，部门数的生成过程尝试使用线程池，结果是反而变慢，因为线程池里面的任务都很小（小到任务生成的时间和调度管理时间都很接近），这就造成资源浪费了。</p>
+</blockquote>
+</blockquote>
+<h5 id="关于用到newCachedThreadPool线程池可能会遇到的问题"><a href="#关于用到newCachedThreadPool线程池可能会遇到的问题" class="headerlink" title="关于用到newCachedThreadPool线程池可能会遇到的问题"></a>关于用到newCachedThreadPool线程池可能会遇到的问题</h5><p>newCachedThreadPool的源码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ExecutorService <span class="title">newCachedThreadPool</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> ThreadPoolExecutor(<span class="number">0</span>, Integer.MAX_VALUE,</span><br><span class="line">                                 <span class="number">60L</span>, TimeUnit.SECONDS,</span><br><span class="line">                                 <span class="keyword">new</span> SynchronousQueue&lt;Runnable&gt;());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到它允许的线程数为Integer.MAX_VALUE，这代表可以无限大，因为线程数可以这么多，所以会可能导致OOM问题，要解决这个问题，根本上要自己定义个方法，给线程数设置一个合理的上限，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ThreadPoolExecutor(<span class="number">0</span>,<span class="number">1024</span>，<span class="number">60L</span>, TimeUnit.SECONDS, <span class="keyword">new</span> SynchronousQueue&lt;Runnable&gt;());</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -545,7 +563,7 @@
               
                 <a href="/techTube/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -567,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/techTube/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -616,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPoolExecutor"><span class="nav-number">1.</span> <span class="nav-text">ThreadPoolExecutor</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPoolExecutor"><span class="nav-number">1.</span> <span class="nav-text">ThreadPoolExecutor</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线程池的合理配置"><span class="nav-number">1.0.1.</span> <span class="nav-text">线程池的合理配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关于用到newCachedThreadPool线程池可能会遇到的问题"><span class="nav-number">1.0.2.</span> <span class="nav-text">关于用到newCachedThreadPool线程池可能会遇到的问题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -655,7 +673,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">191</span>
+    <span title="Site words total count">484</span>
   
 </div>
 
