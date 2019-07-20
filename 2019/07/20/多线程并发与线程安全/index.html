@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="死锁四个必要条件：   互斥条件 请求和保持条件 不剥夺条件 环路等待条件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T07:26:34.018Z">
+<meta property="og:updated_time" content="2019-07-20T07:31:44.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程并发与线程安全">
 <meta name="twitter:description" content="死锁四个必要条件：   互斥条件 请求和保持条件 不剥夺条件 环路等待条件">
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  848
+                  850
                 </span>
               
 
@@ -426,12 +426,12 @@
 
 </details>
 
-<h5 id="避免死锁方法"><a href="#避免死锁方法" class="headerlink" title="避免死锁方法"></a>避免死锁方法</h5><p>1.加锁顺序，线程要按一定顺序加锁。<br>2.加锁时限，加锁时要限时，超过时限就要放弃对该锁的请求并释放自己占有的锁。如ReentranLock。<br>3.死锁检测，这是个说起来容易做起来的难得办法。一般也没人选择这样实现。<br>在实际项目中，如果发生了死锁，往往就要重启项目，这个代价还是非常大的。</p>
+<h5 id="避免死锁方法"><a href="#避免死锁方法" class="headerlink" title="避免死锁方法"></a>避免死锁方法</h5><p>1.加锁顺序，线程要按一定顺序加锁。<br>2.加锁时限，加锁时要限时，超过时限就要放弃对该锁的请求并释放自己占有的锁。如ReentranLock。<br>3.死锁检测，这是个说起来容易做起来难的办法。一般也没人选择这样实现。<br>在实际项目中，如果发生了死锁，往往就要重启项目，这个代价还是非常大的。</p>
 <h5 id="Spring与线程安全"><a href="#Spring与线程安全" class="headerlink" title="Spring与线程安全"></a>Spring与线程安全</h5><ul>
-<li>Spring Bean: singleton(单例)、prototype<br>Spring对每个Bean提供了scope属性来表示该Bean之作用域，它是这个Bean的生命周期，singleton对象表示单例对象，在第一次注入时就会被复用到应用结束；<br>prototype类型则在每次注入时都会创建新的对象。</li>
+<li>Spring Bean: singleton(单例)、prototype<br>Spring对每个Bean提供了scope属性来表示该Bean之作用域，它是这个Bean的生命周期，singleton对象表示单例对象，在第一次注入时就会被复用到应用结束；prototype类型则在每次注入时都会创建新的对象。</li>
 <li>无状态对象<br>由Spring管理的对象其实大多数是无状态对象（不会因为多线程进行线程调度而导致状态被破坏）。包括常用到的dto、vo这些只作为数据实体模型的对象，还有service、dao、controller等等对象。例如每个dao提供的函数，对只是对数据库的crud操作，并且每个数据库的connection都是作为函数的局部变量，用完即关，或者交还连接池。<br>局部变量是在用户栈中，是线程私有的内存区域，所以也不存在线程安全问题。</li>
 </ul>
-<p>所以很清楚，Spring对Bean的多线程安全问题做出任何保证或措施，对于每个Bean不存在线程安全问题，根本原因是这些Bean的设计并没有在Bean中声明任何有状态的实例变量或类变量。如果要做有状态设计，那么可以使用ThreadLocal把变量变成线程私有，而如果Bean的实例变量或者类变量需要在多个线程间共享，那就只能使用synchronized、lock、CAS等实现线程同步了。</p>
+<p>所以很清楚，Spring对Bean的多线程安全问题并没有做出任何保证或措施，对于每个Bean不存在线程安全问题，根本原因是这些Bean的设计并没有在Bean中声明任何有状态的实例变量或类变量。如果要做有状态设计，那么可以使用ThreadLocal把变量变成线程私有，而如果Bean的实例变量或者类变量需要在多个线程间共享，那就只能使用synchronized、lock、CAS等实现线程同步了。</p>
 
       
     </div>
