@@ -8,7 +8,19 @@
         <category>Spring框架</category>
       </categories>
       <tags>
+        <tag>框架</tag>
         <tag>Spring Cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Spring Boot]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F19%2FSpring-Boot%2F</url>
+    <content type="text"><![CDATA[待添加]]></content>
+      <categories>
+        <category>Spring框架</category>
+      </categories>
+      <tags>
+        <tag>Spring Boot</tag>
         <tag>框架</tag>
       </tags>
   </entry>
@@ -21,6 +33,18 @@
       </categories>
       <tags>
         <tag>线程池</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Spring]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F19%2FSpring%2F</url>
+    <content type="text"><![CDATA[Spring源码分析blablabla]]></content>
+      <categories>
+        <category>Spring框架</category>
+      </categories>
+      <tags>
+        <tag>框架</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>
