@@ -1839,7 +1839,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #332abb;
+  background: #c3c15e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1913,7 +1913,7 @@ pre .javascript .function {
   padding: 0 2px 5px 10px;
   text-align: left;
   list-style: none;
-  font-size: 14px;
+  font-size: 13px;
 }
 .post-toc ol > ol {
   padding-left: 0;
