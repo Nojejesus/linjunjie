@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="死锁四个必要条件：   互斥条件 请求和保持条件 不剥夺条件 环路等待条件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T07:31:44.220Z">
+<meta property="og:updated_time" content="2019-07-20T14:36:11.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程并发与线程安全">
 <meta name="twitter:description" content="死锁四个必要条件：   互斥条件 请求和保持条件 不剥夺条件 环路等待条件">
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  850
+                  1.2k
                 </span>
               
 
@@ -432,6 +432,8 @@
 <li>无状态对象<br>由Spring管理的对象其实大多数是无状态对象（不会因为多线程进行线程调度而导致状态被破坏）。包括常用到的dto、vo这些只作为数据实体模型的对象，还有service、dao、controller等等对象。例如每个dao提供的函数，对只是对数据库的crud操作，并且每个数据库的connection都是作为函数的局部变量，用完即关，或者交还连接池。<br>局部变量是在用户栈中，是线程私有的内存区域，所以也不存在线程安全问题。</li>
 </ul>
 <p>所以很清楚，Spring对Bean的多线程安全问题并没有做出任何保证或措施，对于每个Bean不存在线程安全问题，根本原因是这些Bean的设计并没有在Bean中声明任何有状态的实例变量或类变量。如果要做有状态设计，那么可以使用ThreadLocal把变量变成线程私有，而如果Bean的实例变量或者类变量需要在多个线程间共享，那就只能使用synchronized、lock、CAS等实现线程同步了。</p>
+<h5 id="HashMap与ConcurrentHashMap"><a href="#HashMap与ConcurrentHashMap" class="headerlink" title="HashMap与ConcurrentHashMap"></a>HashMap与ConcurrentHashMap</h5><p>前者是非线程安全的，后者是线程安全的。<br>前者允许key，value为空，后者则不允许。<br>前者不允许在通过Iterator遍历同时对HashMap修改（例如使用iterator的remove()），而后者是允许的，并且更新后续可见。<br>ConcurrentHashMap是也通过key的哈希值与数组的长度的取模来确定该key在数组中的索引（是不是有点绕），与以往版本不同的是，在Java8里ConcurrentHashMap的实现做了较大调整，取消了segment分段锁而采用CAS和synchronized来保证并发安全，数据结构采用数组+链表/红黑二叉树的方式实现（当链表中的节点个数超过8个时，转换成红黑树的数据结构来存储。synchronized只锁定当前链表或红黑二叉树的首节点），提高了并发性，寻址效率高。(补充一下，1.8HashMap也不再仅仅是数组+链表形式，也有树了)</p>
+<h6 id="概念：fast-fail机制"><a href="#概念：fast-fail机制" class="headerlink" title="概念：fast-fail机制"></a>概念：fast-fail机制</h6><p>即快速失败机制，是java集合（Collection）中的一种错误检测机制。在迭代集合的过程中该集合在结构上发生改变时，就可能发生fast-fail，即抛出ConcurrentModificationException异常。fast-fail机制并不保证在异步修改一定会抛出异常，它只是“尽最大努力”去抛出，所以这种机制一般仅用于检测bug。<br>推荐阅读：<a href="http://www.nowamagic.net/librarys/veda/detail/1202" target="_blank" rel="noopener">http://www.nowamagic.net/librarys/veda/detail/1202</a> HashMap的存取之美</p>
 
       
     </div>
@@ -475,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/techTube/2019/07/20/数据库和缓存一致性问题/" rel="prev" title="数据库和缓存一致性问题">
+                数据库和缓存一致性问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -553,7 +559,7 @@
               
                 <a href="/techTube/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -564,7 +570,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/techTube/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -575,7 +581,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/techTube/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -624,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#死锁"><span class="nav-number">1.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#避免死锁方法"><span class="nav-number">2.</span> <span class="nav-text">避免死锁方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring与线程安全"><span class="nav-number">3.</span> <span class="nav-text">Spring与线程安全</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#死锁"><span class="nav-number">1.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#避免死锁方法"><span class="nav-number">2.</span> <span class="nav-text">避免死锁方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring与线程安全"><span class="nav-number">3.</span> <span class="nav-text">Spring与线程安全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HashMap与ConcurrentHashMap"><span class="nav-number">4.</span> <span class="nav-text">HashMap与ConcurrentHashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#概念：fast-fail机制"><span class="nav-number">4.1.</span> <span class="nav-text">概念：fast-fail机制</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -663,7 +669,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.3k</span>
+    <span title="Site words total count">1.8k</span>
   
 </div>
 
