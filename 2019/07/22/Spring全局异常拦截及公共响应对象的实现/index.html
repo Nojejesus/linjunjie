@@ -77,16 +77,17 @@
 
 
 
-<meta name="description" content="苟利国家生死以，岂因祸福避趋之">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Talk is cheap, show you my code.">
-<meta property="og:url" content="https://nojejesus.github.io/techTube/tags/数据库/index.html">
+<meta name="description" content="公共响应对象的封装 JsonData类封装了一个通用的返回结构，并不具备拦截器功能。 [展示代码]    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455package com.jjstore.common;import lombok.Gette">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring全局异常拦截及公共响应对象的实现">
+<meta property="og:url" content="https://nojejesus.github.io/techTube/2019/07/22/Spring全局异常拦截及公共响应对象的实现/index.html">
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
-<meta property="og:description" content="苟利国家生死以，岂因祸福避趋之">
+<meta property="og:description" content="公共响应对象的封装 JsonData类封装了一个通用的返回结构，并不具备拦截器功能。 [展示代码]    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455package com.jjstore.common;import lombok.Gette">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-21T18:37:38.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Talk is cheap, show you my code.">
-<meta name="twitter:description" content="苟利国家生死以，岂因祸福避趋之">
+<meta name="twitter:title" content="Spring全局异常拦截及公共响应对象的实现">
+<meta name="twitter:description" content="公共响应对象的封装 JsonData类封装了一个通用的返回结构，并不具备拦截器功能。 [展示代码]    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455package com.jjstore.common;import lombok.Gette">
 
 
 
@@ -116,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="https://nojejesus.github.io/techTube/tags/数据库/">
+  <link rel="canonical" href="https://nojejesus.github.io/techTube/2019/07/22/Spring全局异常拦截及公共响应对象的实现/">
 
 
 
 
 
-  <title>Tag: 数据库 | Talk is cheap, show you my code.</title>
+  <title>Spring全局异常拦截及公共响应对象的实现 | Talk is cheap, show you my code.</title>
   
 
 
@@ -141,7 +142,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,52 +278,224 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>数据库<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nojejesus.github.io/techTube/techTube/2019/07/22/Spring全局异常拦截及公共响应对象的实现/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junjie Lin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/techTube/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Talk is cheap, show you my code.">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/techTube/2019/07/20/数据库和缓存一致性问题/" itemprop="url">
-              
-                <span itemprop="name">数据库和缓存一致性问题</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Spring全局异常拦截及公共响应对象的实现</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-20T22:37:55+08:00" content="2019-07-20">
-          07-20
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-22T02:09:17+08:00">
+                2019-07-22
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/techTube/categories/projects/" itemprop="url" rel="index">
+                    <span itemprop="name">projects</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/techTube/categories/projects/permission/" itemprop="url" rel="index">
+                    <span itemprop="name">permission</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  729
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <h3 id="公共响应对象的封装"><a href="#公共响应对象的封装" class="headerlink" title="公共响应对象的封装"></a>公共响应对象的封装</h3><ul>
+<li>JsonData类封装了一个通用的返回结构，并不具备拦截器功能。<details>
+<summary><font color="darkred">[展示代码]</font></summary>
+
+</details></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jjstore.common;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Getter;</span><br><span class="line"><span class="keyword">import</span> lombok.Setter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义接口json数据返回的结构</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonData</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> ret;  <span class="comment">//返回结果</span></span><br><span class="line">    <span class="keyword">private</span> String msg;  <span class="comment">//提示信息</span></span><br><span class="line">    <span class="keyword">private</span> Object data;  <span class="comment">//返回的数据</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">JsonData</span><span class="params">(<span class="keyword">boolean</span> ret)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ret = ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> JsonData <span class="title">success</span><span class="params">(Object object, String msg)</span> </span>&#123;</span><br><span class="line">        JsonData jsonData = <span class="keyword">new</span> JsonData(<span class="keyword">true</span>);</span><br><span class="line">        jsonData.msg = msg;</span><br><span class="line">        jsonData.data = object;</span><br><span class="line">        <span class="keyword">return</span> jsonData;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> JsonData <span class="title">success</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        JsonData jsonData = <span class="keyword">new</span> JsonData(<span class="keyword">true</span>);</span><br><span class="line">        jsonData.data = object;</span><br><span class="line">        <span class="keyword">return</span> jsonData;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> JsonData <span class="title">success</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> JsonData(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> JsonData <span class="title">fail</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        JsonData jsonData = <span class="keyword">new</span> JsonData(<span class="keyword">false</span>);</span><br><span class="line">        jsonData.msg = msg;</span><br><span class="line">        <span class="keyword">return</span> jsonData;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">toMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        HashMap&lt;String, Object&gt; result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        result.put(<span class="string">"ret"</span>, ret);</span><br><span class="line">        result.put(<span class="string">"msg"</span>, msg);</span><br><span class="line">        result.put(<span class="string">"data"</span>, data);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="全局异常拦截器的实现"><a href="#全局异常拦截器的实现" class="headerlink" title="全局异常拦截器的实现"></a>全局异常拦截器的实现</h3><ul>
+<li>为什么要做全局异常拦截？<br>如果我们不拦截，后端的异常直接抛到前端，例如像tomcat那个看起来特别丑的界面或者显示异常对象的样板代码，体验是很不友好的。实际开发中是不允许的出现这种情况的。全局异常拦截器的实现是我们期望在任何情况下都能按照一个统一结构返回给前端控制器，这是一种优雅的设计方式。<br>拦截器实现代码：（其中PermissionException和ParamException是自定义的异常类）<details>
+<summary><font color="darkred">[展示代码]</font></summary>
+
+</details></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jjstore.common;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jjstore.exception.ParamException;</span><br><span class="line"><span class="keyword">import</span> com.jjstore.exception.PermissionException;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.HandlerExceptionResolver;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringExceptionResolver</span> <span class="keyword">implements</span> <span class="title">HandlerExceptionResolver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">resolveException</span><span class="params">(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response, Object handler, Exception ex)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取当前访问的url</span></span><br><span class="line">        String url = request.getRequestURL().toString();</span><br><span class="line">        ModelAndView mv;</span><br><span class="line">        String defaultMsg = <span class="string">"System error"</span>;</span><br><span class="line">        <span class="comment">//对数据请求和页面请求分别做异常处理</span></span><br><span class="line">        <span class="comment">//那么我们如何判断当前的请求是数据请求还是页面请求呢？--方案一：从request里取得header，来判断请求类型，实现较复杂；</span></span><br><span class="line">        <span class="comment">//方案二：通过自定义接口规范，如所有接口json数据请求使用.json结尾，所有页面请求使用.page结尾。则通过此后缀来判断。</span></span><br><span class="line">        <span class="comment">//所以本项目要求所有请求json数据，都使用.json结尾；请求page页面，都是用.page结尾。</span></span><br><span class="line">        <span class="keyword">if</span> (url.endsWith(<span class="string">".json"</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ex <span class="keyword">instanceof</span> PermissionException || ex <span class="keyword">instanceof</span> ParamException) &#123;</span><br><span class="line">                JsonData result = JsonData.fail(ex.getMessage());</span><br><span class="line">                mv = <span class="keyword">new</span> ModelAndView(<span class="string">"jsonView"</span>, result.toMap());</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//log日志记录请求的url，打印ex堆栈</span></span><br><span class="line">                log.error(<span class="string">"unknow json exception, url:"</span> + url, ex);</span><br><span class="line">                JsonData result = JsonData.fail(defaultMsg);</span><br><span class="line">                mv = <span class="keyword">new</span> ModelAndView(<span class="string">"jsonView"</span>, result.toMap());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">".page"</span>)) &#123;</span><br><span class="line">            log.error(<span class="string">"unknow page exception, url:"</span> + url, ex);</span><br><span class="line">            JsonData result = JsonData.fail(defaultMsg);</span><br><span class="line">            mv = <span class="keyword">new</span> ModelAndView(<span class="string">"exception"</span>, result.toMap());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            log.error(<span class="string">"unknow exception, url:"</span> + url, ex);</span><br><span class="line">            JsonData result = JsonData.fail(defaultMsg);</span><br><span class="line">            mv = <span class="keyword">new</span> ModelAndView(<span class="string">"jsonView"</span>, result.toMap());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ul>
+<li>在spring-servlet.xml中注入这个bean<details>
+<summary><font color="darkred">[展示代码]</font></summary>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 全局异常处理类 --&gt;</span><br><span class="line">&lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.jjstore.common.SpringExceptionResolver"</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+</details></li>
+</ul>
+<br>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/techTube/2019/07/21/IDEA的使用习惯和小技巧/" rel="next" title="IDEA的使用习惯和小技巧">
+                <i class="fa fa-chevron-left"></i> IDEA的使用习惯和小技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +503,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -350,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -441,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#公共响应对象的封装"><span class="nav-number">1.</span> <span class="nav-text">公共响应对象的封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局异常拦截器的实现"><span class="nav-number">2.</span> <span class="nav-text">全局异常拦截器的实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -629,6 +831,10 @@
   
 
   
+  <script type="text/javascript" src="/techTube/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/techTube/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
