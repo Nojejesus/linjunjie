@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[IDEA的使用习惯和小技巧]]></title>
     <url>%2FtechTube%2F2019%2F07%2F21%2FIDEA%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B9%A0%E6%83%AF%E5%92%8C%E5%B0%8F%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"><![CDATA[常用快捷键（win）Ctrl + N : 按类名查找Ctrl + D : 复制当前行Ctrl + Y : 删除当前行Ctrl + Shift + N : 按文件名查找Ctrl + Shift + ↑ : 当前行向上移Ctrl + Shift + ↓ : 当前行向下移 Ctrl + F12 : 当前类文件结构（域，方法）Alt + F12 : Generate代码生成器Ctrl + Alt + T : Surround With]]></content>
+    <content type="text"><![CDATA[常用快捷键（win）Ctrl + N : 按类名查找Ctrl + D : 复制当前行Ctrl + Y : 删除当前行Ctrl + Shift + N : 按文件名查找Ctrl + Shift + ↑ : 当前行向上移Ctrl + Shift + ↓ : 当前行向下移 Ctrl + F12 : 当前类文件结构（域，方法）Alt + Insert : Generate代码生成器Ctrl + Alt + T : Surround With]]></content>
       <categories>
         <category>日常工具</category>
       </categories>
