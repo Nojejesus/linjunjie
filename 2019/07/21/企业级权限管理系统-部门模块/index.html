@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类，表示部门的vo类，并且DeptParam类添加lombok的注解@ToString。controller包下创建SysDeptController类；service包下SysDe">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-21T02:18:42.168Z">
+<meta property="og:updated_time" content="2019-07-21T02:33:05.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="企业级权限管理系统-部门模块">
 <meta name="twitter:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类，表示部门的vo类，并且DeptParam类添加lombok的注解@ToString。controller包下创建SysDeptController类；service包下SysDe">
@@ -425,8 +425,11 @@
 <ul>
 <li>分层结构<br>本次并没采用上次商城demo的controller + (service interface + service implement) + dao结构，而是基本的controller + service + dao；<br>首先后者这个基本分层是应该要有的，对于service interface + service implement这样设计本身没有严格要求，但细分出接口+接口实现有一些特殊好处，比如service要做成RPC服务，直接将service的interface暴露出去就可以了。</li>
 </ul>
-<h3 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h3><p>1.如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。<br>2.待续<br>  2.1Continue<br>  2.2Text</p>
-<a id="more"></a>
+<h3 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h3><ol>
+<li>如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。</li>
+<li>待续<br> 2.1 Continue<br> 2.2 Text<a id="more"></a>
+</li>
+</ol>
 
       
     </div>

@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[企业级权限管理系统-部门模块]]></title>
     <url>%2FtechTube%2F2019%2F07%2F21%2F%E4%BC%81%E4%B8%9A%E7%BA%A7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E9%83%A8%E9%97%A8%E6%A8%A1%E5%9D%97%2F</url>
-    <content type="text"><![CDATA[新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。 param包（vo层）下创建DeptParam类，表示部门的vo类，并且DeptParam类添加lombok的注解@ToString。controller包下创建SysDeptController类；service包下SysDeptService类；util包下创建LevelUtil工具类（计算部门的层级）。 分层结构本次并没采用上次商城demo的controller + (service interface + service implement) + dao结构，而是基本的controller + service + dao；首先后者这个基本分层是应该要有的，对于service interface + service implement这样设计本身没有严格要求，但细分出接口+接口实现有一些特殊好处，比如service要做成RPC服务，直接将service的interface暴露出去就可以了。 注意的点1.如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。2.待续 2.1Continue 2.2Text]]></content>
+    <content type="text"><![CDATA[新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。 param包（vo层）下创建DeptParam类，表示部门的vo类，并且DeptParam类添加lombok的注解@ToString。controller包下创建SysDeptController类；service包下SysDeptService类；util包下创建LevelUtil工具类（计算部门的层级）。 分层结构本次并没采用上次商城demo的controller + (service interface + service implement) + dao结构，而是基本的controller + service + dao；首先后者这个基本分层是应该要有的，对于service interface + service implement这样设计本身没有严格要求，但细分出接口+接口实现有一些特殊好处，比如service要做成RPC服务，直接将service的interface暴露出去就可以了。 注意的点 如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。 待续 2.1 Continue 2.2 Text]]></content>
       <categories>
         <category>projects</category>
         <category>permission</category>
