@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[IDEA的使用习惯和小技巧]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F21%2FIDEA%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B9%A0%E6%83%AF%E5%92%8C%E5%B0%8F%E6%8A%80%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[常用快捷键（win）Ctrl + N : 按类名查找Ctrl + D : 复制当前行Ctrl + Y : 删除当前行Ctrl + Shift + N : 按文件名查找Ctrl + Shift + ↑ : 当前行向上移Ctrl + Shift + ↓ : 当前行向下移 Ctrl + F12 : 当前类文件结构（域，方法）Alt + F12 : Generate代码生成器Ctrl + Alt + T : Surround With]]></content>
+      <categories>
+        <category>日常工具</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[企业级权限管理系统-部门模块]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F21%2F%E4%BC%81%E4%B8%9A%E7%BA%A7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E9%83%A8%E9%97%A8%E6%A8%A1%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。 param包（vo层）下创建DeptParam类，表示部门controller包下创建SysDeptController类service包下SysDeptService类util包下创建LevelUtil工具类（计算部门的层级） 分层结构本次并没采用上次商城demo的controller + (service interface + service implement) + dao结构，而是基本的controller + service + dao；首先后者这个基本分层是应该要有的，对于service interface + service implement这样设计本身没有严格要求，但细分出接口+接口实现有一些特殊好处，比如service要做成RPC服务，直接将service的interface暴露出去就可以了。]]></content>
+      <categories>
+        <category>projects</category>
+        <category>permission</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[数据库和缓存一致性问题]]></title>
     <url>%2FtechTube%2F2019%2F07%2F20%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[DB和缓存同时操作的一致性问题缓存中的数据和数据源并非总是一致的，应用程序必须实现一种帮助确保缓存和数据源一致的策略。这种策略不仅能够确保缓存里的数据是最新的，而且当缓存中的数据不是最新的时候，需要能被监测到并采取响应措施。（待续：https://coding.imooc.com/learn/questiondetail/105625.html）]]></content>
