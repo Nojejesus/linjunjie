@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-21T06:40:15.820Z">
+<meta property="og:updated_time" content="2019-07-22T08:05:25.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="企业级权限管理系统-部门模块">
 <meta name="twitter:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  579
+                  666
                 </span>
               
 
@@ -458,6 +458,8 @@
 </ol>
 <h3 id="部门层级树接口开发"><a href="#部门层级树接口开发" class="headerlink" title="部门层级树接口开发"></a>部门层级树接口开发</h3><h3 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h3><ol>
 <li>如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。</li>
+<li>部门表的level这个字段其实就是父级id的集合。这样设计的思考是：如果查询某部门下所有的子部门，就不需要进行递归查询，只需要使用（当前部门层级+当前部门id）作为前缀查询就可。</li>
+<li>dto，即数据传输对象，添加这一层</li>
 <li>待续<br> 2.1 Continue<br> 2.2 Text</li>
 </ol>
 
@@ -525,6 +527,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -697,7 +702,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.2k</span>
+    <span title="Site words total count">3.3k</span>
   
 </div>
 
