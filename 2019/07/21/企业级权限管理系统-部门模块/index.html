@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T08:05:25.005Z">
+<meta property="og:updated_time" content="2019-07-23T06:24:03.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="企业级权限管理系统-部门模块">
 <meta name="twitter:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  666
+                  837
                 </span>
               
 
@@ -426,7 +426,7 @@
       
 
       
-        <h3 id="新增部门接口开发"><a href="#新增部门接口开发" class="headerlink" title="新增部门接口开发"></a>新增部门接口开发</h3><ul>
+        <h2 id="新增部门接口开发"><a href="#新增部门接口开发" class="headerlink" title="新增部门接口开发"></a>新增部门接口开发</h2><ul>
 <li>IDEA分屏模式<br>在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。</li>
 </ul>
 <ul>
@@ -435,7 +435,7 @@
 <ul>
 <li>分层结构<br>本次并没采用上次商城demo的controller + (service interface + service implement) + dao结构，而是基本的controller + service + dao；<br>首先后者这个基本分层是应该要有的，对于service interface + service implement这样设计本身没有严格要求，但细分出接口+接口实现有一些特殊好处，比如service要做成RPC服务，直接将service的interface暴露出去就可以了。</li>
 </ul>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ol>
 <li><p>model包为pojo层，SysDept类（部门pojo类）添加lombok注解@Builder，使得Sysdept类通过builder()方法创建实例对象。service层实现新增部门业务逻辑：</p>
  <details>
  <summary><font color="darkred">[展示代码]</font></summary>
@@ -466,10 +466,19 @@
 
 </li>
 </ol>
-<h3 id="部门层级树接口开发"><a href="#部门层级树接口开发" class="headerlink" title="部门层级树接口开发"></a>部门层级树接口开发</h3><h3 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h3><ol>
+<h2 id="部门层级树接口开发"><a href="#部门层级树接口开发" class="headerlink" title="部门层级树接口开发"></a>部门层级树接口开发</h2><h3 id="java-util-Collections-sort"><a href="#java-util-Collections-sort" class="headerlink" title="java.util.Collections.sort()"></a>java.util.Collections.sort()</h3><p>方法源码:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(List&lt;T&gt; list, Comparator&lt;? <span class="keyword">super</span> T&gt; c)</span> </span>&#123;</span><br><span class="line">    list.sort(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="java-util-Comparator"><a href="#java-util-Comparator" class="headerlink" title="java.util.Comparator"></a>java.util.Comparator</h3><p>能对对象集合进行总排序的接口（比较器）。可以将比较器传递给一个排序方法，如:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(List, Comparator)</span><br><span class="line">或者</span><br><span class="line">Arrays.sort(Object[], Comparator)</span><br></pre></td></tr></table></figure>
+
+<p>实现明确的排序次序。<br>对于集合中的任意元素e1、e2，当且仅当e1.equals(e2)==0，才认为布尔值相同，那么c.compare(e1, e2)==0；通过比较DeptLevelDto对象的seq域对集合List<deptleveldto> rootList进行排序：  </deptleveldto></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(rootList, <span class="keyword">new</span> Comparator&lt;DeptLevelDto&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(DeptLevelDto o1, DeptLevelDto o2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.getSeq() - o2.getSeq();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h2><ol>
 <li>如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。</li>
 <li>部门表的level这个字段其实就是父级id的集合。这样设计的思考是：如果查询某部门下所有的子部门，就不需要进行递归查询，只需要使用（当前部门层级+当前部门id）作为前缀查询就可。</li>
-<li>dto，即数据传输对象，添加这一层</li>
+<li>dto，数据传输对象。本项目中的作用vo-&gt;dto-&gt;pojo-&gt;entity</li>
 <li>待续<br> 2.1 Continue<br> 2.2 Text</li>
 </ol>
 
@@ -673,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增部门接口开发"><span class="nav-number">1.</span> <span class="nav-text">新增部门接口开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部门层级树接口开发"><span class="nav-number">2.</span> <span class="nav-text">部门层级树接口开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意的点"><span class="nav-number">3.</span> <span class="nav-text">注意的点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新增部门接口开发"><span class="nav-number">1.</span> <span class="nav-text">新增部门接口开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部门层级树接口开发"><span class="nav-number">2.</span> <span class="nav-text">部门层级树接口开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-util-Collections-sort"><span class="nav-number">2.1.</span> <span class="nav-text">java.util.Collections.sort()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-util-Comparator"><span class="nav-number">2.2.</span> <span class="nav-text">java.util.Comparator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意的点"><span class="nav-number">3.</span> <span class="nav-text">注意的点</span></a></li></ol></div>
             
 
           </div>
@@ -712,7 +721,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.3k</span>
+    <span title="Site words total count">3.5k</span>
   
 </div>
 

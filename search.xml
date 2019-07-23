@@ -23,7 +23,7 @@
   <entry>
     <title><![CDATA[企业级权限管理系统-部门模块]]></title>
     <url>%2FtechTube%2F2019%2F07%2F21%2F%E4%BC%81%E4%B8%9A%E7%BA%A7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E9%83%A8%E9%97%A8%E6%A8%A1%E5%9D%97%2F</url>
-    <content type="text"><![CDATA[新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。 param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；util包下创建LevelUtil工具类（计算部门的层级）。 分层结构本次并没采用上次商城demo的controller + (service interface + service implement) + dao结构，而是基本的controller + service + dao；首先后者这个基本分层是应该要有的，对于service interface + service implement这样设计本身没有严格要求，但细分出接口+接口实现有一些特殊好处，比如service要做成RPC服务，直接将service的interface暴露出去就可以了。 代码 model包为pojo层，SysDept类（部门pojo类）添加lombok注解@Builder，使得Sysdept类通过builder()方法创建实例对象。service层实现新增部门业务逻辑： [展示代码] 12345678910111213/** * @Sysdept 部门pojo类 * @deptParam controller层传入部门对象 * @dept service层vo对象*/SysDept dept = SysDept.builder() .name(deptParam.getName()) .parentId(deptParam.getParentId()) .seq(deptParam.getSeq()) .remark(deptParam.getRemark()) .build();//dept层级dept.setLevel(LevelUtil.calculateLevel(getLevel(deptParam.getParentId()), deptParam.getParentId())); 计算部门层级的工具类 [展示代码] 123456789101112131415161718192021public class LevelUtil &#123; private static final String SEPARATOR = "."; private static final String ROOT = "0"; //例如 //0 //0.1 //0.1.2 //0.1.3 //0.4 //根据parentId查询parentLevel, 然后拼接parentId得到当前部门所在层级 public static String calculateLevel(String parentLevel, int parentId) &#123; if (StringUtils.isBlank(parentLevel)) &#123; return ROOT; &#125; else &#123; return StringUtils.join(parentLevel, SEPARATOR, parentId); &#125; &#125;&#125; 有选择地更新部门字段，新增部门 [展示代码] 12//只对有值的字段插入，没有值的字段不做处理，也不触发NotNull因素sysDeptMapper.insertSelective(dept); controller层直接调用service层业务逻辑并返回响应结果 [展示代码] 123456@RequestMapping("save.json")@ResponseBodypublic JsonData saveDept(DeptParam deptParam) &#123; sysDeptService.save(deptParam); return JsonData.success();&#125; 部门层级树接口开发注意的点 如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。 部门表的level这个字段其实就是父级id的集合。这样设计的思考是：如果查询某部门下所有的子部门，就不需要进行递归查询，只需要使用（当前部门层级+当前部门id）作为前缀查询就可。 dto，即数据传输对象，添加这一层 待续 2.1 Continue 2.2 Text]]></content>
+    <content type="text"><![CDATA[新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。 param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；util包下创建LevelUtil工具类（计算部门的层级）。 分层结构本次并没采用上次商城demo的controller + (service interface + service implement) + dao结构，而是基本的controller + service + dao；首先后者这个基本分层是应该要有的，对于service interface + service implement这样设计本身没有严格要求，但细分出接口+接口实现有一些特殊好处，比如service要做成RPC服务，直接将service的interface暴露出去就可以了。 代码 model包为pojo层，SysDept类（部门pojo类）添加lombok注解@Builder，使得Sysdept类通过builder()方法创建实例对象。service层实现新增部门业务逻辑： [展示代码] 12345678910111213/** * @Sysdept 部门pojo类 * @deptParam controller层传入部门对象 * @dept service层vo对象*/SysDept dept = SysDept.builder() .name(deptParam.getName()) .parentId(deptParam.getParentId()) .seq(deptParam.getSeq()) .remark(deptParam.getRemark()) .build();//dept层级dept.setLevel(LevelUtil.calculateLevel(getLevel(deptParam.getParentId()), deptParam.getParentId())); 计算部门层级的工具类 [展示代码] 123456789101112131415161718192021public class LevelUtil &#123; private static final String SEPARATOR = "."; private static final String ROOT = "0"; //例如 //0 //0.1 //0.1.2 //0.1.3 //0.4 //根据parentId查询parentLevel, 然后拼接parentId得到当前部门所在层级 public static String calculateLevel(String parentLevel, int parentId) &#123; if (StringUtils.isBlank(parentLevel)) &#123; return ROOT; &#125; else &#123; return StringUtils.join(parentLevel, SEPARATOR, parentId); &#125; &#125;&#125; 有选择地更新部门字段，新增部门 [展示代码] 12//只对有值的字段插入，没有值的字段不做处理，也不触发NotNull因素sysDeptMapper.insertSelective(dept); controller层直接调用service层业务逻辑并返回响应结果 [展示代码] 123456@RequestMapping("save.json")@ResponseBodypublic JsonData saveDept(DeptParam deptParam) &#123; sysDeptService.save(deptParam); return JsonData.success();&#125; 部门层级树接口开发java.util.Collections.sort()方法源码: 123public static &lt;T&gt; void sort(List&lt;T&gt; list, Comparator&lt;? super T&gt; c) &#123; list.sort(c);&#125; java.util.Comparator能对对象集合进行总排序的接口（比较器）。可以将比较器传递给一个排序方法，如: 123Collections.sort(List, Comparator)或者Arrays.sort(Object[], Comparator) 实现明确的排序次序。对于集合中的任意元素e1、e2，当且仅当e1.equals(e2)==0，才认为布尔值相同，那么c.compare(e1, e2)==0；通过比较DeptLevelDto对象的seq域对集合List rootList进行排序： 123456Collections.sort(rootList, new Comparator&lt;DeptLevelDto&gt;() &#123; @Override public int compare(DeptLevelDto o1, DeptLevelDto o2) &#123; return o1.getSeq() - o2.getSeq(); &#125;&#125;); 注意的点 如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。 部门表的level这个字段其实就是父级id的集合。这样设计的思考是：如果查询某部门下所有的子部门，就不需要进行递归查询，只需要使用（当前部门层级+当前部门id）作为前缀查询就可。 dto，数据传输对象。本项目中的作用vo-&gt;dto-&gt;pojo-&gt;entity 待续 2.1 Continue 2.2 Text]]></content>
       <categories>
         <category>projects</category>
         <category>permission</category>
@@ -74,8 +74,8 @@
         <category>Spring框架</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>Spring Cloud</tag>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
@@ -86,8 +86,8 @@
         <category>Spring框架</category>
       </categories>
       <tags>
-        <tag>Spring Boot</tag>
         <tag>框架</tag>
+        <tag>Spring Boot</tag>
       </tags>
   </entry>
   <entry>
