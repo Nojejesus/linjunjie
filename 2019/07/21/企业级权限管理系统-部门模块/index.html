@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T08:30:32.887Z">
+<meta property="og:updated_time" content="2019-07-23T11:18:11.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="企业级权限管理系统-部门模块">
 <meta name="twitter:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  954
+                  1.5k
                 </span>
               
 
@@ -478,11 +478,17 @@
 <p>实现明确的排序次序。对于任意元素e1、e2，当且仅当e1.equals(e2)==0，才认为布尔值相同，那么c.compare(e1, e2)==0；rootList是DeptLevelDto类对象的集合，通过比较DeptLevelDto类对象的seq域对rootList的元素进行排序：  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//排序规则，从小到大</span></span><br><span class="line">Collections.sort(rootList, <span class="keyword">new</span> Comparator&lt;DeptLevelDto&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(DeptLevelDto o1, DeptLevelDto o2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.getSeq() - o2.getSeq();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
+<p>Comparator接口具有方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(T o1, T o2)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>返回一个负数，0或正数，分别表示第一个参数小于，等于或大于第二个参数。</p>
+<h3 id="递归生成部门树的方法"><a href="#递归生成部门树的方法" class="headerlink" title="递归生成部门树的方法"></a>递归生成部门树的方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//递归生成树方法(层级a下所有部门|所有子部门集合，层级a，已按层级-部门做归类映射的所有部门|所有子部门集合)</span></span><br><span class="line"><span class="comment">//level:0, 0, all   0 -&gt; 0.1, 0.2</span></span><br><span class="line"><span class="comment">//level:0.1</span></span><br><span class="line"><span class="comment">//level:0.2</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transformDeptTree</span><span class="params">(List&lt;DeptLevelDto&gt; deptLevelDtoList, String level, Multimap&lt;String, DeptLevelDto&gt; levelDeptMap)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//遍历每个部门</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; deptLevelDtoList.size(); i++) &#123;</span><br><span class="line">        DeptLevelDto deptLevelDto = deptLevelDtoList.get(i);</span><br><span class="line">        <span class="comment">//处理当前部门的数据</span></span><br><span class="line">        <span class="comment">//子部门的层级</span></span><br><span class="line">        String nextLevel = LevelUtil.calculateLevel(level, deptLevelDto.getId());</span><br><span class="line">        <span class="comment">//获取子部门</span></span><br><span class="line">        List&lt;DeptLevelDto&gt; tempDeptList = (List&lt;DeptLevelDto&gt;) levelDeptMap.get(nextLevel);</span><br><span class="line">        <span class="keyword">if</span> (CollectionUtils.isNotEmpty(tempDeptList)) &#123;</span><br><span class="line">            <span class="comment">//排序</span></span><br><span class="line">            Collections.sort(tempDeptList, deptSeqComparator);</span><br><span class="line">            <span class="comment">//设置下一层部门，即将排好序的子部门挂在当前部门下</span></span><br><span class="line">            deptLevelDto.setDeptLevelDtoList(tempDeptList);</span><br><span class="line">            <span class="comment">//进入子部门的下一层处理</span></span><br><span class="line">            transformDeptTree(tempDeptList, nextLevel, levelDeptMap);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h2><ol>
 <li>如果一个类不覆写toString()方法，直接打印这个类时调用的是Object里的toString()，实现苦涩难懂，输出与hashCode有关，实际中我们期望打印的是该类的实例的相关变量值，在类上添加lombok注解@ToString相当于覆写了toString()方法，输出内容是基于变量组成的字符串，容易读懂。</li>
 <li>部门表的level这个字段其实就是父级id的集合。这样设计的思考是：如果查询某部门下所有的子部门，就不需要进行递归查询，只需要使用（当前部门层级+当前部门id）作为前缀查询就可。</li>
-<li>dto，数据传输对象。本项目中的作用vo-&gt;dto-&gt;pojo-&gt;entity</li>
-<li>待续<br> 2.1 Continue<br> 2.2 Text</li>
+<li>dto，数据传输对象。本项目中的作用vo-&gt;dto-&gt;pojo-&gt;entity，作用于展示层和服务层的数据传输。</li>
+<li>尽管DeptParam与SysDept比较像，但从设计上它们属于两个层面的内容，DeptParam说白了就是封装前端的参数，后面如果处理它是不关心的。这样带来的好处是，数据库有什么调整前端不需要感知。尽管有时候使用SysDept对象去接收前端参数也能完成一些接口的开发，但是这样会造成扩展性很差，同时也相当于把数据库设计暴露给前端了。另外对于数据对象如果引用了其他对象的情况，参数如何传递也是一个大问题，这种情况如果在做一些升级，比如1对1关系，变成1对多关系，前端就直接无法做兼容调整了，后端做字段调整时可能直接带来前端访问错误。但理论上任何一个表的字段都可能调整多次，这就属于无形间增加了数据库调整时的复杂度。只有各个层之间做到真正分离，任何一层需要修改时只需修改层与层之间的适配即可，正常的项目就应该这样去设计。</li>
 </ol>
 
       
@@ -685,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新增部门接口开发"><span class="nav-number">1.</span> <span class="nav-text">新增部门接口开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部门层级树接口开发"><span class="nav-number">2.</span> <span class="nav-text">部门层级树接口开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#com-google-common-collect-Multimap"><span class="nav-number">2.1.</span> <span class="nav-text">com.google.common.collect.Multimap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-util-Collections-sort"><span class="nav-number">2.2.</span> <span class="nav-text">java.util.Collections.sort()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-util-Comparator"><span class="nav-number">2.3.</span> <span class="nav-text">java.util.Comparator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意的点"><span class="nav-number">3.</span> <span class="nav-text">注意的点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新增部门接口开发"><span class="nav-number">1.</span> <span class="nav-text">新增部门接口开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部门层级树接口开发"><span class="nav-number">2.</span> <span class="nav-text">部门层级树接口开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#com-google-common-collect-Multimap"><span class="nav-number">2.1.</span> <span class="nav-text">com.google.common.collect.Multimap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-util-Collections-sort"><span class="nav-number">2.2.</span> <span class="nav-text">java.util.Collections.sort()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-util-Comparator"><span class="nav-number">2.3.</span> <span class="nav-text">java.util.Comparator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归生成部门树的方法"><span class="nav-number">2.4.</span> <span class="nav-text">递归生成部门树的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意的点"><span class="nav-number">3.</span> <span class="nav-text">注意的点</span></a></li></ol></div>
             
 
           </div>
@@ -724,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.6k</span>
+    <span title="Site words total count">4.2k</span>
   
 </div>
 
