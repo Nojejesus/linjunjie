@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T06:24:03.950Z">
+<meta property="og:updated_time" content="2019-07-23T07:03:44.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="企业级权限管理系统-部门模块">
 <meta name="twitter:description" content="新增部门接口开发 IDEA分屏模式在IDEA标签页右键可选择”Split Vertically”或”Split Horizontally”进行横向分屏或垂向分屏模式。   param包（vo层）下创建DeptParam类（部门的vo类），添加lombok注解@ToString。controller包下创建SysDeptController类；service包下创建SysDeptService类；u">
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  837
+                  833
                 </span>
               
 
@@ -472,7 +472,7 @@
 <h3 id="java-util-Comparator"><a href="#java-util-Comparator" class="headerlink" title="java.util.Comparator"></a>java.util.Comparator</h3><p>能对对象集合进行总排序的接口（比较器）。可以将比较器传递给一个排序方法，如:  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(List, Comparator)</span><br><span class="line">或者</span><br><span class="line">Arrays.sort(Object[], Comparator)</span><br></pre></td></tr></table></figure>
 
-<p>实现明确的排序次序。<br>对于集合中的任意元素e1、e2，当且仅当e1.equals(e2)==0，才认为布尔值相同，那么c.compare(e1, e2)==0；通过比较DeptLevelDto对象的seq域对集合List<deptleveldto> rootList进行排序：  </deptleveldto></p>
+<p>实现明确的排序次序。<br>对于任意元素e1、e2，当且仅当e1.equals(e2)==0，才认为布尔值相同，那么c.compare(e1, e2)==0；通过比较DeptLevelDto对象的seq域对集合List<deptleveldto> rootList进行排序：  </deptleveldto></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(rootList, <span class="keyword">new</span> Comparator&lt;DeptLevelDto&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(DeptLevelDto o1, DeptLevelDto o2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.getSeq() - o2.getSeq();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h2><ol>
