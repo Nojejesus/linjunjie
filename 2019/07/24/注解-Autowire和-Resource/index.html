@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
 <meta property="og:description" content="场景当一个接口有多个实现类时，Spring的Bean注入要指定继承类，主要有以下两种方式：  @Resource是JDK提供的注解，默认按照by-name方式寻找bean，一般一个name对应一个bean，当找不到与名称匹配的bean才会按照类型装配（by-type）。当注解写在字段上，默认取字段名进行查找，如果name属性一旦指定，就只会按照名称来装配。@Autowired是Spring提供的注">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-24T05:15:13.147Z">
+<meta property="og:updated_time" content="2019-07-24T05:19:52.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="注解@Autowired和@Resource">
 <meta name="twitter:description" content="场景当一个接口有多个实现类时，Spring的Bean注入要指定继承类，主要有以下两种方式：  @Resource是JDK提供的注解，默认按照by-name方式寻找bean，一般一个name对应一个bean，当找不到与名称匹配的bean才会按照类型装配（by-type）。当注解写在字段上，默认取字段名进行查找，如果name属性一旦指定，就只会按照名称来装配。@Autowired是Spring提供的注">
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  364
+                  359
                 </span>
               
 
@@ -405,12 +405,7 @@
 <h3 id="注入方式"><a href="#注入方式" class="headerlink" title="注入方式"></a>注入方式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(<span class="string">"userService3"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br><span class="line">---or</span><br><span class="line"><span class="meta">@Resource</span>(name = <span class="string">"userService3"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
 
 <p>另外，@Autowired属于Spring，@Resource属于J2EE，@Resource可以减少与Spring的耦合，代码更优雅。</p>
-<p>推荐阅读:  </p>
-<ol>
-<li>Spring中注解@Autowired与@Resource的依赖注入源码分析<br>![][<a href="https://blog.csdn.net/bawcwchen/article/details/79793288]" target="_blank" rel="noopener">https://blog.csdn.net/bawcwchen/article/details/79793288]</a></li>
-<li>Spring annotation中,@resource如何找到实现类的<br>![][<a href="https://blog.csdn.net/zc_ad/article/details/78124269]" target="_blank" rel="noopener">https://blog.csdn.net/zc_ad/article/details/78124269]</a></li>
-<li>在普通Java类里使用spring里注入的service、dao等<br>![][<a href="https://blog.csdn.net/tianyaleixiaowu/article/details/54630383]" target="_blank" rel="noopener">https://blog.csdn.net/tianyaleixiaowu/article/details/54630383]</a></li>
-</ol>
+<p>推荐阅读:<br>Spring中注解@Autowired与@Resource的依赖注入源码分析<br><a href="https://blog.csdn.net/bawcwchen/article/details/79793288" target="_blank" rel="noopener">https://blog.csdn.net/bawcwchen/article/details/79793288</a><br>Spring annotation中,@resource如何找到实现类的<br><a href="https://blog.csdn.net/zc_ad/article/details/78124269" target="_blank" rel="noopener">https://blog.csdn.net/zc_ad/article/details/78124269</a><br>在普通Java类里使用spring里注入的service、dao等<br><a href="https://blog.csdn.net/tianyaleixiaowu/article/details/54630383" target="_blank" rel="noopener">https://blog.csdn.net/tianyaleixiaowu/article/details/54630383</a></p>
 
       
     </div>
@@ -536,7 +531,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/techTube/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
