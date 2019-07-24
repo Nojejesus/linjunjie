@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Spring之事务]]></title>
     <url>%2FtechTube%2F2019%2F07%2F24%2FSpring%E4%B9%8B%E4%BA%8B%E5%8A%A1%2F</url>
-    <content type="text"><![CDATA[推荐阅读：Spring事务管理（详解+实例）Spring配置事务五种方式Spring事务管理的四种方式（以银行转账为例）Spring事务传播行为详解 spring事务管理]]></content>
+    <content type="text"><![CDATA[推荐阅读：Spring事务管理（详解+实例）Spring配置事务五种方式Spring事务管理的四种方式（以银行转账为例）Spring事务传播行为详解spring事务管理]]></content>
       <categories>
         <category>Spring框架</category>
         <category>Spring</category>
@@ -90,25 +90,27 @@
   <entry>
     <title><![CDATA[Spring Cloud]]></title>
     <url>%2FtechTube%2F2019%2F07%2F19%2FSpring-Cloud%2F</url>
-    <content type="text"><![CDATA[待添加 待添加]]></content>
+    <content type="text"><![CDATA[Just do IT Do more IT]]></content>
       <categories>
         <category>Spring框架</category>
+        <category>Spring Cloud</category>
       </categories>
       <tags>
-        <tag>Spring Cloud</tag>
         <tag>框架</tag>
+        <tag>Spring Cloud</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Spring Boot]]></title>
     <url>%2FtechTube%2F2019%2F07%2F19%2FSpring-Boot%2F</url>
-    <content type="text"><![CDATA[待添加]]></content>
+    <content type="text"><![CDATA[Spring Boot]]></content>
       <categories>
         <category>Spring框架</category>
+        <category>Spring Boot</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>Spring Boot</tag>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
