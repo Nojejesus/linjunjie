@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java动态代理]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F25%2FJava%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%2F</url>
+    <content type="text"><![CDATA[推荐阅读：你真的完全了解Java动态代理吗？看这篇就够了Java动态代理机制详解（JDK 和CGLIB，Javassist，ASM）Java两种动态代理JDK动态代理和CGLIB动态代理Java动态代理 深度详解]]></content>
+      <categories>
+        <category>Java杂谈</category>
+      </categories>
+      <tags>
+        <tag>动态代理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Spring之事务]]></title>
     <url>%2FtechTube%2F2019%2F07%2F24%2FSpring%E4%B9%8B%E4%BA%8B%E5%8A%A1%2F</url>
     <content type="text"><![CDATA[推荐阅读：Spring事务管理（详解+实例）Spring配置事务五种方式Spring事务管理的四种方式（以银行转账为例）Spring事务传播行为详解spring事务管理]]></content>
@@ -127,7 +138,7 @@
   <entry>
     <title><![CDATA[Spring]]></title>
     <url>%2FtechTube%2F2019%2F07%2F19%2FSpring%2F</url>
-    <content type="text"><![CDATA[Spring推荐阅读：Spring源码整体架构]]></content>
+    <content type="text"><![CDATA[Spring推荐阅读：Spring源码整体架构spring注解@Component、@Service等自动生成bean的命名规则Spring注解@Component、@Repository、@Service、@Controller区别]]></content>
       <categories>
         <category>Spring框架</category>
         <category>Spring</category>

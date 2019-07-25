@@ -68,6 +68,7 @@
 
 
 
+  <meta name="keywords" content="动态代理,">
 
 
 
@@ -77,17 +78,19 @@
 
 
 
-<meta name="description" content="苟利国家生死以，岂因祸福避趋之">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://nojejesus.github.io/techTube/categories/index.html">
+
+<meta name="description" content="推荐阅读：你真的完全了解Java动态代理吗？看这篇就够了Java动态代理机制详解（JDK 和CGLIB，Javassist，ASM）Java两种动态代理JDK动态代理和CGLIB动态代理Java动态代理 深度详解">
+<meta name="keywords" content="动态代理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java动态代理">
+<meta property="og:url" content="https://nojejesus.github.io/techTube/2019/07/25/Java动态代理/index.html">
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
-<meta property="og:description" content="苟利国家生死以，岂因祸福避趋之">
+<meta property="og:description" content="推荐阅读：你真的完全了解Java动态代理吗？看这篇就够了Java动态代理机制详解（JDK 和CGLIB，Javassist，ASM）Java两种动态代理JDK动态代理和CGLIB动态代理Java动态代理 深度详解">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-19T10:33:24.262Z">
+<meta property="og:updated_time" content="2019-07-25T11:45:33.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="苟利国家生死以，岂因祸福避趋之">
+<meta name="twitter:title" content="Java动态代理">
+<meta name="twitter:description" content="推荐阅读：你真的完全了解Java动态代理吗？看这篇就够了Java动态代理机制详解（JDK 和CGLIB，Javassist，ASM）Java两种动态代理JDK动态代理和CGLIB动态代理Java动态代理 深度详解">
 
 
 
@@ -117,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://nojejesus.github.io/techTube/categories/">
+  <link rel="canonical" href="https://nojejesus.github.io/techTube/2019/07/25/Java动态代理/">
 
 
 
 
 
-  <title>分类 | Talk is cheap, show you my code.</title>
+  <title>Java动态代理 | Talk is cheap, show you my code.</title>
   
 
 
@@ -280,40 +283,200 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nojejesus.github.io/techTube/techTube/2019/07/25/Java动态代理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junjie Lin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/techTube/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Talk is cheap, show you my code.">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                9 categories in total
+          <h1 class="post-title" itemprop="name headline">Java动态代理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-25T19:25:02+08:00">
+                2019-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/techTube/categories/Java杂谈/" itemprop="url" rel="index">
+                    <span itemprop="name">Java杂谈</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/techTube/2019/07/25/Java动态代理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/techTube/2019/07/25/Java动态代理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  61
+                </span>
+              
+
+              
+
+              
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/Java杂谈/">Java杂谈</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/Spring框架/">Spring框架</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/Spring框架/Spring/">Spring</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/Spring框架/Spring-Boot/">Spring Boot</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/Spring框架/Spring-Cloud/">Spring Cloud</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/projects/">projects</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/projects/permission/">permission</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/techTube/categories/日常工具/">日常工具</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>推荐阅读：<br><a href="https://www.jianshu.com/p/95970b089360" target="_blank" rel="noopener">你真的完全了解Java动态代理吗？看这篇就够了</a><br><a href="https://www.cnblogs.com/rinack/p/7742682.html" target="_blank" rel="noopener">Java动态代理机制详解（JDK 和CGLIB，Javassist，ASM）</a><br><a href="https://blog.csdn.net/flyfeifei66/article/details/81481222" target="_blank" rel="noopener">Java两种动态代理JDK动态代理和CGLIB动态代理</a><br><a href="https://www.cnblogs.com/midiyu/p/7878609.html" target="_blank" rel="noopener">Java动态代理 深度详解</a></p>
+<a id="more"></a>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/techTube/tags/动态代理/" rel="tag"><i class="fa fa-tag"></i> 动态代理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/techTube/2019/07/24/Spring之事务/" rel="next" title="Spring之事务">
+                <i class="fa fa-chevron-left"></i> Spring之事务
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
