@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[来自Github的巨星]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F27%2F%E6%9D%A5%E8%87%AAGithub%E7%9A%84%E5%B7%A8%E6%98%9F%2F</url>
+    <content type="text"><![CDATA[Github项目]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[十大排序算法]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F27%2F%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[冒泡排序从序列的一端开始往另一端冒泡。 代码实现 展示代码 123456789101112131415//时间复杂度 o(n^2)public static void sort(int[] args) &#123; //冒泡轮数 for (int i = 0; i &lt; arr.length -1; i++) &#123; //依次两两比较 for (int j = 0; j &lt; arr.length - 1 - i; j++) &#123; int temp = 0; if (arr[j] &lt; arr[j + 1]) &#123; temp = arr[j]; arr[j] = arr[j +1]; arr[j + 1] = temp; &#125; &#125; &#125;&#125; 选择排序找到数组中最小（或最大）的元素，和数组中的第一个元素交换位置；在剩下的元素中找到最小（或最大）元素，和数组中的第二个元素交换位置，如此循环…直到整个数组排序完成。 代码实现 展示代码 123456789101112131415//时间复杂度 o(n^2)public static void sort(int arr[]) &#123; for (int i =0; i &lt; arr.length; i++) &#123; int min = i; //最小元素的下标 for (int j = i + 1; j &lt; arr.length; j++) &#123; if (arr[j] &lt; arr[min]) &#123; min = j; //找最小值 &#125; &#125; //交换位置 int temp = arr[i]; arr[i] = arr[min]; arr[min] = temp; &#125;&#125; 插入排序代码实现 展示代码 1234567891011121314151617//最好的时间复杂度是 o(n)，最坏的时间复杂度是 o(n^2)；//时间复杂度指标看的是最坏情况public static void sort(int[] arr) &#123; int n = arr.length; for (int i = 0; i &lt; n; i++) &#123; int value = arr[i]; int j = 0; //插入的位置 for (j = i - 1; j &gt;= 0; j--) &#123; if (arr[j] &gt; value) &#123; arr[j + 1] = arr[j]; //移动数据 &#125; else &#123; break; &#125; &#125; arr[j + 1] = value; //插入数据 &#125;&#125; 希尔排序待续未完 推荐阅读：这或许是东半球讲十大排序算法最好的一篇文章]]></content>
+      <categories>
+        <category>数据结构和算法</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java动态代理]]></title>
     <url>%2FtechTube%2F2019%2F07%2F25%2FJava%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%2F</url>
     <content type="text"><![CDATA[推荐阅读：你真的完全了解Java动态代理吗？看这篇就够了Java动态代理机制详解（JDK 和CGLIB，Javassist，ASM）Java两种动态代理JDK动态代理和CGLIB动态代理Java动态代理 深度详解]]></content>
