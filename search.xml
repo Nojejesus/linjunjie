@@ -161,7 +161,7 @@
   <entry>
     <title><![CDATA[Spring]]></title>
     <url>%2FtechTube%2F2019%2F07%2F19%2FSpring%2F</url>
-    <content type="text"><![CDATA[Spring推荐阅读：Spring源码整体架构spring注解@Component、@Service等自动生成bean的命名规则Spring注解@Component、@Repository、@Service、@Controller区别]]></content>
+    <content type="text"><![CDATA[Spring推荐阅读：Spring源码整体架构spring注解@Component、@Service等自动生成bean的命名规则Spring注解@Component、@Repository、@Service、@Controller区别 Spring单例模式与线程安全 ☆☆☆☆☆]]></content>
       <categories>
         <category>Spring框架</category>
         <category>Spring</category>
