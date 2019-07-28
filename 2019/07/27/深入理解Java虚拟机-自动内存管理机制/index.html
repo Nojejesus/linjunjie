@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="自动内存管理机制Java虚拟机运行时数据区 由所有线程共享的数据区：方法区、堆 线程隔离的数据区：虚拟机栈、本地方法栈、程序计数器   程序计数器程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。 Java虚拟机栈与程序计数器一样，Java虚拟机栈也是线程私有的。生命周期与线程相同。虚拟机栈描述的是Java方法执行的内存模型：每个方法在执行时都会创建一个栈帧用于存储局">
+<meta name="description" content="自动内存管理机制Java虚拟机运行时数据区 由所有线程共享的数据区：方法区、堆 线程隔离的数据区：虚拟机栈、本地方法栈、程序计数器   程序计数器程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。">
 <meta name="keywords" content="Java虚拟机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解Java虚拟机-自动内存管理机制">
 <meta property="og:url" content="https://nojejesus.github.io/techTube/2019/07/27/深入理解Java虚拟机-自动内存管理机制/index.html">
 <meta property="og:site_name" content="Talk is cheap, show you my code.">
-<meta property="og:description" content="自动内存管理机制Java虚拟机运行时数据区 由所有线程共享的数据区：方法区、堆 线程隔离的数据区：虚拟机栈、本地方法栈、程序计数器   程序计数器程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。 Java虚拟机栈与程序计数器一样，Java虚拟机栈也是线程私有的。生命周期与线程相同。虚拟机栈描述的是Java方法执行的内存模型：每个方法在执行时都会创建一个栈帧用于存储局">
+<meta property="og:description" content="自动内存管理机制Java虚拟机运行时数据区 由所有线程共享的数据区：方法区、堆 线程隔离的数据区：虚拟机栈、本地方法栈、程序计数器   程序计数器程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-27T15:30:36.595Z">
+<meta property="og:updated_time" content="2019-07-27T19:20:50.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解Java虚拟机-自动内存管理机制">
-<meta name="twitter:description" content="自动内存管理机制Java虚拟机运行时数据区 由所有线程共享的数据区：方法区、堆 线程隔离的数据区：虚拟机栈、本地方法栈、程序计数器   程序计数器程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。 Java虚拟机栈与程序计数器一样，Java虚拟机栈也是线程私有的。生命周期与线程相同。虚拟机栈描述的是Java方法执行的内存模型：每个方法在执行时都会创建一个栈帧用于存储局">
+<meta name="twitter:description" content="自动内存管理机制Java虚拟机运行时数据区 由所有线程共享的数据区：方法区、堆 线程隔离的数据区：虚拟机栈、本地方法栈、程序计数器   程序计数器程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。">
 
 
 
@@ -424,6 +424,7 @@
 </ul>
 <hr>
 <h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><p>程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。</p>
+<a id="more"></a>
 <h4 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h4><p>与程序计数器一样，Java虚拟机栈也是线程私有的。生命周期与线程相同。<br>虚拟机栈描述的是Java方法执行的内存模型：每个方法在执行时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。<br>局部变量表存放了编译器可知的各种基本数据类型（boolean、byte、char、short、int、float、long、double）、对象引用（不等同对象本身，可能是个指向对象起始地址的引用指针）和returnAddress类型（指向一条字节码指令的地址）。</p>
 <h4 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h4><p>为虚拟机使用的Native方法服务。</p>
 <hr>
