@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[搞笑之为什么类中有get()和set()方法]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F31%2F%E6%90%9E%E7%AC%91%E4%B9%8B%E4%B8%BA%E4%BB%80%E4%B9%88%E7%B1%BB%E4%B8%AD%E6%9C%89get-%E5%92%8Cset-%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[推荐阅读：关于面向对象编程中很多人用get()和set()方法，而不用public的一点总结 总结下我认为最重要是：通过get()和set()方法可以控制字段只能读不能写，或只能写不能读等。]]></content>
+      <categories>
+        <category>Java杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Jenkins和Docker]]></title>
     <url>%2FtechTube%2F2019%2F07%2F31%2FJenkins%E5%92%8CDocker%2F</url>
     <content type="text"><![CDATA[推荐阅读：详解CI、CD相关概念Jenkins与Docker的自动化CI/CD实战Jenkins和Docker实现自动化构建部署]]></content>
