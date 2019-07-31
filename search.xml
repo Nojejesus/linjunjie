@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ThreadLocal深度理解]]></title>
+    <url>%2FtechTube%2F2019%2F07%2F31%2FThreadLocal%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[ThreadLocal是什么线程的本地副本，变量存储的工具类。将私有线程和该线程存放的对象副本做一个映射，各个线程之间的变量互不干扰，在高并发场景下，可以实现无状态的调用，特别适用于各个线程依赖不通的变量值完成操作的场景。 ThreadLocal的内部结构图 核心机制： + 每个Thread线程内部有一个Map。 + Map里面存储线程线程本地对象（key）和线程的变量副本（value）。 + Map由ThreadLocal维护，由ThreadLocal负责向Map获取和设置线程的变量值。 所以，对于不同的线程，每次获取副本值时，其他线程并不能获取到当前线程的副本值，形成了副本的隔离，互不干扰。 Thread线程内部的Map在类中描述如下： 12345public class Thread implements Runnable &#123; /* ThreadLocal values pertaining to this thread. This map is maintained * by the ThreadLocal class. */ ThreadLocal.ThreadLocalMap threadLocals = null;&#125; ThreadLocal类提供如下几个核心方法： 123public T get()public void set(T value)public void remove() get() 获取当前线程的副本变量值 set() 保存当前线程的副本变量值 initialValue() 当前线程初始副本变量值 remove() 移除当前线程的副本变量值 get()方法12345678910111213141516171819202122232425262728293031323334353637/** * Returns the value in the current thread's copy of this * thread-local variable. If the variable has no value for the * current thread, it is first initialized to the value returned * by an invocation of the &#123;@link #initialValue&#125; method. * * @return the current thread's value of this thread-local */public T get() &#123; Thread t = Thread.currentThread(); ThreadLocalMap map = getMap(t); if (map != null) &#123; ThreadLocalMap.Entry e = map.getEntry(this); if (e != null) return (T)e.value; &#125; return setInitialValue();&#125;ThreadLocalMap getMap(Thread t) &#123; return t.threadLocals;&#125;private T setInitialValue() &#123; T value = initialValue(); Thread t = Thread.currentThread(); ThreadLocalMap map = getMap(t); if (map != null) map.set(this, value); else createMap(t, value); return value;&#125;protected T initialValue() &#123; return null;&#125; set()方法12345678910111213141516171819202122232425/** * Sets the current thread's copy of this thread-local variable * to the specified value. Most subclasses will have no need to * override this method, relying solely on the &#123;@link #initialValue&#125; * method to set the values of thread-locals. * * @param value the value to be stored in the current thread's copy of * this thread-local. */public void set(T value) &#123; Thread t = Thread.currentThread(); ThreadLocalMap map = getMap(t); if (map != null) map.set(this, value); else createMap(t, value);&#125;ThreadLocalMap getMap(Thread t) &#123; return t.threadLocals;&#125;void createMap(Thread t, T firstValue) &#123; t.threadLocals = new ThreadLocalMap(this, firstValue);&#125; remove()方法1234567891011121314151617181920/** * Removes the current thread's value for this thread-local * variable. If this thread-local variable is subsequently * &#123;@linkplain #get read&#125; by the current thread, its value will be * reinitialized by invoking its &#123;@link #initialValue&#125; method, * unless its value is &#123;@linkplain #set set&#125; by the current thread * in the interim. This may result in multiple invocations of the * &lt;tt&gt;initialValue&lt;/tt&gt; method in the current thread. * * @since 1.5 */public void remove() &#123; ThreadLocalMap m = getMap(Thread.currentThread()); if (m != null) m.remove(this);&#125;ThreadLocalMap getMap(Thread t) &#123; return t.threadLocals;&#125; ThreadLocalMapThreadLocalMap是ThreadLocal的内部类，没有实现Map接口，用独立方式实现了Map的功能，其内部的Entry也独立实现。 推荐阅读：ThreadLocal-面试必问深度解析一个故事讲明白线程的私家领地：ThreadLocal]]></content>
+      <categories>
+        <category>Java杂谈</category>
+      </categories>
+      <tags>
+        <tag>ThreadLocal</tag>
+        <tag>线程安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[搞笑之为什么类中有get()和set()方法]]></title>
     <url>%2FtechTube%2F2019%2F07%2F31%2F%E6%90%9E%E7%AC%91%E4%B9%8B%E4%B8%BA%E4%BB%80%E4%B9%88%E7%B1%BB%E4%B8%AD%E6%9C%89get-%E5%92%8Cset-%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[推荐阅读：关于面向对象编程中很多人用get()和set()方法，而不用public的一点总结 总结下我认为最重要是：通过get()和set()方法可以控制字段只能读不能写，或只能写不能读等。]]></content>
@@ -133,8 +145,8 @@
       </categories>
       <tags>
         <tag>并发</tag>
-        <tag>多线程</tag>
         <tag>线程安全</tag>
+        <tag>多线程</tag>
       </tags>
   </entry>
   <entry>
