@@ -89,7 +89,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/Nojejesus/techTube/master/images/ThreadLocal内部结构.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Nojejesus/techTube/master/images/ThreadLocalMap类图.png">
-<meta property="og:updated_time" content="2019-07-31T03:54:05.911Z">
+<meta property="og:updated_time" content="2019-07-31T04:05:11.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ThreadLocal深度理解">
 <meta name="twitter:description" content="ThreadLocal是什么线程的本地副本，变量存储的工具类。将私有线程和该线程存放的对象副本做一个映射，各个线程之间的变量互不干扰，在高并发场景下，可以实现无状态的调用，特别适用于各个线程依赖不通的变量值完成操作的场景。 ThreadLocal的内部结构图">
@@ -427,10 +427,12 @@
 </div>
 <a id="more"></a>
 核心机制：
-+ 每个Thread线程内部有一个Map。
-+ Map里面存储线程线程本地对象（key）和线程的变量副本（value）。
-+ Map由ThreadLocal维护，由ThreadLocal负责向Map获取和设置线程的变量值。
 
+<ul>
+<li>每个Thread线程内部有一个Map。</li>
+<li>Map里面存储线程线程本地对象（key）和线程的变量副本（value）。</li>
+<li>Map由ThreadLocal维护，由ThreadLocal负责向Map获取和设置线程的变量值。</li>
+</ul>
 <p>所以，对于不同的线程，每次获取副本值时，其他线程并不能获取到当前线程的副本值，形成了副本的隔离，互不干扰。</p>
 <p>Thread线程内部的Map在类中描述如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Thread</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* ThreadLocal values pertaining to this thread. This map is maintained</span></span><br><span class="line"><span class="comment">     * by the ThreadLocal class. */</span></span><br><span class="line">    ThreadLocal.ThreadLocalMap threadLocals = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
