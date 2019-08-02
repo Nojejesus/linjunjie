@@ -89,7 +89,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/Nojejesus/techTube/master/images/ThreadLocal内部结构.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Nojejesus/techTube/master/images/ThreadLocalMap类图.png">
-<meta property="og:updated_time" content="2019-07-31T04:05:11.032Z">
+<meta property="og:updated_time" content="2019-07-31T04:13:54.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ThreadLocal深度理解">
 <meta name="twitter:description" content="ThreadLocal是什么线程的本地副本，变量存储的工具类。将私有线程和该线程存放的对象副本做一个映射，各个线程之间的变量互不干扰，在高并发场景下，可以实现无状态的调用，特别适用于各个线程依赖不通的变量值完成操作的场景。 ThreadLocal的内部结构图">
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  733
+                  783
                 </span>
               
 
@@ -458,7 +458,9 @@
 </div>
 
 <hr>
-<p>推荐阅读：<br><a href="https://www.jianshu.com/p/98b68c97df9b" target="_blank" rel="noopener">ThreadLocal-面试必问深度解析</a><br><a href="https://mp.weixin.qq.com/s/k4cMqePHagb15-jlYh4PkA" target="_blank" rel="noopener">一个故事讲明白线程的私家领地：ThreadLocal</a></p>
+<p>每个ThreadLocal只能保存一个变量副本，如果想要上线一个线程能够保存多个副本以上，就需要创建多个ThreadLocal。</p>
+<hr>
+<p>推荐阅读：<br><a href="https://www.jianshu.com/p/98b68c97df9b" target="_blank" rel="noopener">ThreadLocal-面试必问深度解析</a><br><a href="https://mp.weixin.qq.com/s/k4cMqePHagb15-jlYh4PkA" target="_blank" rel="noopener">一个故事讲明白线程的私家领地：ThreadLocal</a><br><a href="https://blog.csdn.net/zhuyucheng123/article/details/30083337" target="_blank" rel="noopener">ThreadLocal是否会引起内存溢出？</a></p>
 
       
     </div>
