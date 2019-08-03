@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  537
+                  792
                 </span>
               
 
@@ -415,15 +415,6 @@
         
           <h2 id="用-yml配置mysql连接"><a href="#用-yml配置mysql连接" class="headerlink" title="用.yml配置mysql连接"></a>用.yml配置mysql连接</h2><p>删除resource下文件application.properties，创建文件application.yml</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">toufu</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:mysql://39.108.73.179:3306/test1?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">rootxxx</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">rootpasswordxxx</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="JsonIgnore、-JsonInclude、-JsonFormat"><a href="#JsonIgnore、-JsonInclude、-JsonFormat" class="headerlink" title="@JsonIgnore、@JsonInclude、@JsonFormat"></a>@JsonIgnore、@JsonInclude、@JsonFormat</h2><ul>
-<li>@JsonIgnore 在Json序列化时，java bean中被此注解标记的属性会被忽略掉，序列化和反序列化都会受此影响。<br>一般标示在属性和方法上，在返回的json数据中就不会包含该属性。</li>
-<li>@JsonInclude 控制java pojo对象在序列化成json时，哪些情况才将被转换，例如：<br>@JsonInclude(JsonInclude.Include.NON_NULL) 添加在类上，则当此对象为空或拥有的空字段，不会返回json数据；<br>添加在属性（字段）上，当该属性值为null，返回的json不会包含该属性。</li>
-<li>@JsonFormat Date和String的相互转化。<br>例如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat</span>(pattern = <span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span><br><span class="line">    <span class="keyword">private</span> Date operate_time;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>将Date转化String输出 “operate_time”: “2019-08-03 04:00:03”</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/techTube/2019/08/03/SpringBoot开发常用技术整合/#more" rel="contents">
@@ -2216,7 +2207,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.5k</span>
+    <span title="Site words total count">7.7k</span>
   
 </div>
 
